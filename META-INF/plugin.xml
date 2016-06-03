@@ -1,0 +1,76 @@
+<idea-plugin version="2">
+  <id>com.pengli</id>
+  <name>TranslateEnglish for AS</name>
+  <version>1.0</version>
+  <vendor email="330413101@163.com" url="">penglijava</vendor>
+
+  <description><![CDATA[
+    support 1:选中需要翻译的英文,菜单栏点击TE-TETC
+    support 2:鼠标右键点击generate-TCTE输入你需要翻译的中文
+    translate chinese for selected english word<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+    notes:如果不能显示结果，则表明输入有误或者请稍后再试
+    有什么问题可以邮件我
+    ]]>
+  </change-notes>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+    <!--<action id="pengli.Translation" class="com.pengli.plugin.Translation" text="Translate" description="translate chinese for selected english word">-->
+      <!--<add-to-group group-id="EditMenu" anchor="first"/>-->
+    <!--</action>-->
+
+    <!--<action id="pengli.TranslationE" class="com.pengli.plugin.TranslationEnglishAction" text="TE"-->
+            <!--description="translationEnglish">-->
+      <!--<add-to-group group-id="MainMenu" anchor="first"/>-->
+      <!--<keyboard-shortcut keymap="$default" first-keystroke="meta 1"/>-->
+    <!--</action>-->
+
+    <group id="PubEditorPlugin.Menu" text="_TE" description="translationEnglish">
+      <add-to-group group-id="MainMenu" anchor="last"/>
+      <action id="pengli.Translation"
+              class="com.pengli.plugin.Translation"
+              text="_TETC" description="Hello world from translationEnglish">
+    </action>
+    <!--<keyboard-shortcut keymap="$default" first-keystroke="meta 1"/>
+  <!-</action>-->
+  <!--<action id="pengli.Translation" class="com.pengli.plugin.Translation" text="Translate" description="translate chinese for selected english word">-->
+      <!--</action>-->
+    </group>
+    <action id="pengli.TranslationE"
+            class="com.pengli.plugin.TranslationEnglishAction"
+            text="_TCTE" description="Hello world from translationEnglish">
+      <add-to-group group-id="GenerateGroup" anchor="first"/>
+    </action>
+    <!--<group id="PubEditorPlugin.Menu" text="_TE" description="translationEnglish">-->
+      <!--<add-to-group group-id="MainMenu" anchor="last"/>-->
+
+
+    <!--</group>-->
+
+  </actions>
+
+</idea-plugin>
